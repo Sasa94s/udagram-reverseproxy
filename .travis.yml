@@ -19,5 +19,5 @@ script:
   - docker tag reverseproxy:latest sasa94s/reverseproxy:latest
 
 after_success:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
   - docker push sasa94s/reverseproxy:latest
